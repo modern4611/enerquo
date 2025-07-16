@@ -59,9 +59,11 @@
     }
 
     .section-image {
-      width: 100%;
+      max-width: 50%;
+      display: block;
+      margin: 20px auto;
       border-radius: 6px;
-      margin: 20px 0;
+      opacity: 0.85;
     }
 
     ul, ol {
@@ -73,7 +75,6 @@
       text-decoration: none;
     }
 
-    /* Call-to-Action Button */
     .cta-button {
       display: block;
       width: max-content;
@@ -151,10 +152,13 @@
       margin-top: 40px;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .container {
         padding: 15px;
+      }
+
+      .section-image {
+        max-width: 80%;
       }
 
       .modal-content {
@@ -244,7 +248,7 @@
         <h3>Contact Request</h3>
         <form>
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Your Name">
+          <input type="text" id="name" placeholder="Your Name" required>
 
           <label for="company">Company Name</label>
           <input type="text" id="company" placeholder="Company Name">
@@ -256,7 +260,7 @@
           <input type="text" id="subject" placeholder="Topic of Message">
 
           <label for="message">Message</label>
-          <textarea id="message" rows="5" placeholder="Your request or message..."></textarea>
+          <textarea id="message" rows="5" placeholder="Your request or message..." required></textarea>
 
           <button type="submit">Send</button>
         </form>
@@ -281,9 +285,6 @@
       }
     }
   </script>
-
-</body>
-</html>
 
 </body>
 </html>
