@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Enerquo | Oil & Energy Broker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #20515c;
-      --bg-light: #f1f8ff;
-      --text-dark: #333;
-      --text-muted: #555;
-      --light-gray: #f4f4f4;
+      --navy: #0a2239;
+      --light: #ffffff;
+      --accent: #3ba6ff;
+      --muted: #cfcfcf;
     }
 
     * {
@@ -18,39 +18,39 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
       margin: 0;
       padding: 0;
+      color: var(--light);
+      background-color: var(--navy);
       line-height: 1.6;
-      color: var(--text-dark);
-      background-color: #fff;
-    }
-
-    header {
-      text-align: center;
-      background-color: #000;
-      padding: 0;
     }
 
     header img {
       width: 100%;
       height: auto;
-      max-height: 280px;
+      max-height: 350px;
       object-fit: cover;
+      display: block;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 960px;
       margin: auto;
       padding: 20px;
     }
 
-    img.profile {
+    h1, h2 {
+      color: var(--light);
+      text-align: center;
+    }
+
+    .profile {
       max-width: 160px;
-      height: auto;
       border-radius: 8px;
       display: block;
-      margin: 0 auto 15px;
+      margin: 20px auto;
     }
 
     .contact-info {
@@ -60,86 +60,105 @@
 
     .section-image {
       width: 100%;
-      height: auto;
-      margin: 20px 0;
       border-radius: 6px;
-    }
-
-    h1, h2 {
-      color: var(--primary);
-      text-align: center;
+      margin: 20px 0;
     }
 
     ul, ol {
       padding-left: 20px;
     }
 
-    .cta-form {
-      margin-top: 40px;
-      background-color: var(--bg-light);
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
 
-    .cta-form label {
+    /* Call-to-Action Button */
+    .cta-button {
       display: block;
-      margin-top: 10px;
-      font-weight: bold;
+      width: max-content;
+      margin: 30px auto;
+      padding: 12px 24px;
+      background-color: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
     }
 
-    .cta-form input, .cta-form textarea {
+    .cta-button:hover {
+      background-color: #2992e6;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      color: #000;
+      max-width: 500px;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+    }
+
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .modal-content input,
+    .modal-content textarea {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
+      margin-top: 10px;
       border-radius: 4px;
+      border: 1px solid #ccc;
     }
 
-    .cta-form button {
+    .modal-content button {
       margin-top: 15px;
-      background-color: var(--primary);
-      color: white;
+      background-color: var(--navy);
+      color: #fff;
       border: none;
       padding: 12px 20px;
       border-radius: 4px;
       cursor: pointer;
     }
 
-    .cta-form button:hover {
-      background-color: #003d4c;
-    }
-
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: var(--light-gray);
       font-size: 0.9em;
+      color: var(--muted);
+      padding: 20px;
       margin-top: 40px;
     }
 
-    footer small {
-      display: block;
-      margin-top: 5px;
-      color: var(--text-muted);
-    }
-
-    /* Responsive Design */
+    /* Responsive */
     @media (max-width: 768px) {
-      h1, h2 {
-        font-size: 1.4rem;
-      }
-
       .container {
         padding: 15px;
       }
 
-      .cta-form {
-        padding: 15px;
-      }
-
-      img.profile {
-        max-width: 120px;
+      .modal-content {
+        margin-top: 20%;
       }
     }
   </style>
@@ -153,16 +172,15 @@
 
   <div class="container">
 
-    <!-- Founder Info -->
+    <!-- Founder Section -->
     <img src="images/founder.jpg" alt="Ruby Coronado" class="profile">
     <div class="contact-info">
       <p><strong>Ruby Coronado</strong><br>
-        Founder & Managing Director<br>
-        📍 Sioux Falls, South Dakota<br>
-        📞 +1 (605) 610-9512<br>
-        ✉️ <a href="mailto:rcoronado@enerquo.com">rcoronado@enerquo.com</a><br>
-        📬 5013 S Louise Ave, Unit #7086, Sioux Falls, SD 57108
-      </p>
+      Founder & Managing Director<br>
+      📍 Sioux Falls, South Dakota<br>
+      📞 +1 (605) 610-9512<br>
+      ✉️ <a href="mailto:rcoronado@enerquo.com">rcoronado@enerquo.com</a><br>
+      📬 5013 S Louise Ave, Unit #7086, Sioux Falls, SD 57108</p>
     </div>
 
     <!-- Introduction -->
@@ -191,7 +209,7 @@
       <li>Ongoing brokered deal support until delivery and closure</li>
     </ul>
 
-    <!-- Global Reach -->
+    <!-- Reach -->
     <h2>🌍 Global Reach</h2>
     <p>Enerquo serves clients globally, with a primary focus on emerging energy markets in:</p>
     <ul>
@@ -214,40 +232,58 @@
       <li><strong>Contract Renewal (Optional):</strong> For successful deals, we support term extensions or new contract structuring.</li>
     </ol>
 
-    <p>If you are a qualified buyer or seller interested in secure, brokered petroleum trade opportunities, contact me to begin the onboarding process.</p>
-
     <img src="images/rig-workers2.png" alt="Rig Workers" class="section-image">
 
-    <!-- Contact CTA Form -->
-    <div class="cta-form">
-      <h2>📩 Contact Request</h2>
-      <form action="mailto:rcoronado@enerquo.com" method="POST" enctype="text/plain">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="Name" required>
+    <!-- Contact CTA -->
+    <button class="cta-button" onclick="document.getElementById('modal').style.display='block'">📩 Contact</button>
 
-        <label for="company">Company Name</label>
-        <input type="text" id="company" name="Company" required>
+    <!-- Modal Form -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+        <h3>Contact Request</h3>
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your Name">
 
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="Phone">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" placeholder="Company Name">
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="Email" required>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(123) 456‑7890">
 
-        <label for="message">Request / Message</label>
-        <textarea id="message" name="Message" rows="6" required></textarea>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Topic of Message">
 
-        <button type="submit">Send Request</button>
-      </form>
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="Your request or message..."></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </div>
 
   </div>
 
   <!-- Footer -->
   <footer>
-    © 2025 Enerquo | Independent Oil & Energy Brokerage | US-Based | Sioux Falls, SD<br>
-    <small><em>Founder & Managing Director works in a hybrid remote model. Address provided is a virtual mailbox for business correspondence only.</em></small>
+    © 2025 Enerquo | Independent Oil & Energy Brokerage | US-Based | Sioux Falls, SD
+    <br>
+    <small><em>Founder & Managing Director works hybrid-remote. Address is a virtual mailbox for business correspondence only.</em></small>
   </footer>
+
+  <script>
+    // Close modal if clicked outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
 
 </body>
 </html>
