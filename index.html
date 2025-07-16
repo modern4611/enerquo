@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Enerquo | Oil & Energy Broker</title>
+  <link rel="icon" href="images/enerquobanner.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -25,13 +26,14 @@
       color: var(--light);
       background-color: var(--navy);
       line-height: 1.6;
+      text-align: justify;
     }
 
     header img {
       width: 100%;
       height: auto;
-      max-height: 350px;
-      object-fit: cover;
+      max-height: 400px;
+      object-fit: contain;
       display: block;
     }
 
@@ -46,16 +48,34 @@
       text-align: center;
     }
 
-    .profile {
-      max-width: 160px;
-      border-radius: 8px;
-      display: block;
-      margin: 20px auto;
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 40px;
     }
 
-    .contact-info {
+    .founder-info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .founder-info p {
+      margin: 6px 0;
+      line-height: 1.4;
+    }
+
+    .founder-photo {
+      flex: 1;
+      min-width: 200px;
       text-align: center;
-      margin-bottom: 30px;
+    }
+
+    .founder-photo img {
+      max-width: 100%;
+      border-radius: 8px;
     }
 
     .section-image {
@@ -63,7 +83,7 @@
       display: block;
       margin: 20px auto;
       border-radius: 6px;
-      opacity: 0.7;
+      opacity: 0.6;
     }
 
     ul, ol {
@@ -157,12 +177,21 @@
         padding: 15px;
       }
 
-      .section-image {
-        max-width: 70%;
+      .intro-section {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .modal-content {
         margin-top: 20%;
+      }
+
+      .section-image {
+        max-width: 70%;
+      }
+
+      body {
+        text-align: left;
       }
     }
   </style>
@@ -176,46 +205,48 @@
 
   <div class="container">
 
-    <!-- Founder Section -->
-    <img src="images/founder.jpg" alt="Ruby Coronado" class="profile">
-    <div class="contact-info">
-      <p><strong>Ruby Coronado</strong><br>
-      Founder & Managing Director<br>
-      📍 Sioux Falls, South Dakota<br>
-      📞 +1 (605) 610-9512<br>
-      ✉️ <a href="mailto:rcoronado@enerquo.com">rcoronado@enerquo.com</a><br>
-      📬 5013 S Louise Ave, Unit #7086, Sioux Falls, SD 57108</p>
+    <!-- Founder Section (left text, right image) -->
+    <div class="intro-section">
+      <div class="founder-info">
+        <p><strong>Ruby Coronado</strong><br>
+        Founder & Managing Director<br>
+        📍 Sioux Falls, South Dakota<br>
+        📞 +1 (605) 610-9512<br>
+        ✉️ <a href="mailto:rcoronado@enerquo.com">rcoronado@enerquo.com</a><br>
+        📬 5013 S Louise Ave, Unit #7086, Sioux Falls, SD 57108</p>
+      </div>
+      <div class="founder-photo">
+        <img src="images/founder.jpg" alt="Ruby Coronado">
+      </div>
     </div>
 
-    <!-- Introduction -->
-    <h2>Introduction</h2>
+    <!-- About -->
+    <h2>About Enerquo</h2>
     <p>I am the Founder and Managing Director of Enerquo, an independent oil and energy brokerage specializing in connecting verified petroleum suppliers with high-demand markets across Asia, Africa, and other emerging regions.</p>
-    <p>At Enerquo, I prioritize transparency, long-term partnerships, and eco-conscious trading practices. I work directly with oil producers, refineries, and energy trading companies to facilitate smooth, secure, and compliant international transactions. My goal is to simplify the sourcing of commodities while protecting all parties through vetted documentation and structured negotiation.</p>
+    <p>At Enerquo, I prioritize transparency, long-term partnerships, and eco-conscious trading practices. I work directly with oil producers, refineries, and energy trading companies to facilitate smooth, secure, and compliant international transactions.</p>
 
+    <!-- Team & Services -->
     <img src="images/office-team.png" alt="Office Team" class="section-image">
 
-    <!-- Services -->
-    <h2>💼 Services</h2>
+    <h2>Services</h2>
     <ul>
-      <li>Sourcing and connecting credible oil producers, refineries, and fuel suppliers</li>
-      <li>Facilitating transactions between sellers and verified buyers</li>
-      <li>Supporting documentation and compliance:
+      <li>Sourcing credible oil producers, refineries, and suppliers</li>
+      <li>Facilitating transactions between verified buyers and sellers</li>
+      <li>Supporting compliance documents:
         <ul>
-          <li>NCNDA (Non-Circumvention, Non-Disclosure Agreement)</li>
-          <li>IMFPA (International Master Fee Protection Agreement)</li>
-          <li>LOI (Letter of Intent)</li>
-          <li>SCO (Soft Corporate Offer)</li>
-          <li>SPA (Sales and Purchase Agreement)</li>
+          <li>NCNDA</li>
+          <li>IMFPA</li>
+          <li>LOI, SCO, SPA</li>
         </ul>
       </li>
-      <li>Legal protections for intermediaries and agents</li>
-      <li>CIF, FOB, Spot, and Term contract facilitation</li>
-      <li>Ongoing brokered deal support until delivery and closure</li>
+      <li>Legal protections for agents & intermediaries</li>
+      <li>CIF, FOB, spot & term contracts</li>
     </ul>
 
-    <!-- Reach -->
-    <h2>🌍 Global Reach</h2>
-    <p>Enerquo serves clients globally, with a primary focus on emerging energy markets in:</p>
+    <!-- Global Reach -->
+    <img src="images/globalreach.png" alt="Global Reach" class="section-image">
+
+    <h2>Global Markets</h2>
     <ul>
       <li>Southeast Asia</li>
       <li>Sub-Saharan Africa</li>
@@ -223,25 +254,23 @@
       <li>Middle East</li>
     </ul>
 
-    <img src="images/oil-rig.png" alt="Oil Rig" class="section-image">
-
     <!-- Process -->
-    <h2>🔁 Our 6-Step Process</h2>
-    <ol>
-      <li><strong>Submission of Pre-Qualification Form:</strong> Buyers and sellers complete Enerquo’s pre-qualification form and provide relevant business documentation.</li>
-      <li><strong>Verification & Onboarding:</strong> Upon receipt, Enerquo conducts due diligence and initiates onboarding (15-day processing window).</li>
-      <li><strong>Document Coordination:</strong> We facilitate the exchange of necessary transaction documents: LOI, SCO, NCNDA, IMFPA.</li>
-      <li><strong>Deal Structuring & Facilitation:</strong> Enerquo matches the qualified parties and coordinates negotiation and deal terms.</li>
-      <li><strong>Ongoing Transaction Support:</strong> We assist with communication, compliance, and documentation until product delivery is confirmed.</li>
-      <li><strong>Contract Renewal (Optional):</strong> For successful deals, we support term extensions or new contract structuring.</li>
-    </ol>
-
     <img src="images/rig-workers2.png" alt="Rig Workers" class="section-image">
 
-    <!-- Contact CTA -->
+    <h2>Our 6-Step Process</h2>
+    <ol>
+      <li><strong>Pre-Qualification:</strong> Submit form & documentation</li>
+      <li><strong>Onboarding:</strong> Due diligence (15 days)</li>
+      <li><strong>Document Exchange:</strong> LOI, SCO, NCNDA, IMFPA</li>
+      <li><strong>Deal Structuring:</strong> Matchmaking & negotiation</li>
+      <li><strong>Support:</strong> Transaction monitoring</li>
+      <li><strong>Renewals:</strong> Extend contracts as needed</li>
+    </ol>
+
+    <!-- Contact -->
     <button class="cta-button" onclick="document.getElementById('modal').style.display='block'">📩 Contact</button>
 
-    <!-- Modal Form -->
+    <!-- Modal -->
     <div id="modal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
@@ -271,8 +300,7 @@
 
   <!-- Footer -->
   <footer>
-    © 2025 Enerquo | Independent Oil & Energy Brokerage | US-Based | Sioux Falls, SD
-    <br>
+    © 2025 Enerquo | Independent Oil & Energy Brokerage | US-Based | Sioux Falls, SD<br>
     <small><em>Enerquo is a hybrid-remote business. Address provided is a virtual mailbox for business correspondence only.</em></small>
   </footer>
 
@@ -285,6 +313,9 @@
       }
     }
   </script>
+
+</body>
+</html>
 
 </body>
 </html>
