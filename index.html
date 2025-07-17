@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Enerquo | Oil & Energy Broker</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <style>
     :root {
       --navy: #0a2239;
@@ -19,6 +20,7 @@
 
     body {
       font-family: 'Roboto', sans-serif;
+      font-weight: 400;
       margin: 0;
       padding: 0;
       color: var(--light);
@@ -29,8 +31,9 @@
     header img {
       width: 100%;
       height: auto;
-      display: block;
+      max-height: 350px;
       object-fit: cover;
+      display: block;
     }
 
     .container {
@@ -39,75 +42,147 @@
       padding: 20px;
     }
 
-    h2 {
-      text-align: center;
+    h1, h2 {
       color: var(--light);
+      text-align: center;
     }
 
-    .contact-section {
+    .founder-section {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      margin-bottom: 40px;
     }
 
-    .contact-left {
+    .contact-text {
       flex: 1;
-      min-width: 250px;
+      padding: 20px;
+      min-width: 260px;
     }
 
-    .contact-left p {
-      margin: 6px 0;
+    .contact-text p {
+      text-align: left;
       white-space: pre-line;
     }
 
-    .contact-right img {
-      max-width: 160px;
+    .profile {
+      flex: 1;
+      max-width: 200px;
       border-radius: 8px;
-      display: block;
-      margin-left: auto;
+      margin: 0 auto;
     }
 
     .section-image {
-      max-width: 100%;
+      max-width: 35%;
       display: block;
-      margin: 30px auto;
+      margin: 20px auto;
       border-radius: 6px;
-      opacity: 0.8;
-    }
-
-    .global-banner {
-      position: relative;
-      width: 100%;
-      height: auto;
-      margin: 40px 0 20px;
-    }
-
-    .global-banner img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 6px;
-      opacity: 0.9;
-    }
-
-    .global-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: #ffffffcc;
-      font-size: 1.8rem;
-      font-weight: bold;
-      background-color: rgba(10, 34, 57, 0.4);
-      padding: 10px 20px;
-      border-radius: 4px;
+      opacity: 0.7;
     }
 
     ul, ol {
       padding-left: 20px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .banner {
+      width: 100%;
+      display: block;
+      margin: 40px 0;
+      position: relative;
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--light);
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .cta-button {
+      display: block;
+      width: max-content;
+      margin: 30px auto;
+      padding: 12px 24px;
+      background-color: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background-color: #2992e6;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      color: #000;
+      max-width: 500px;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+    }
+
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .modal-content button {
+      margin-top: 15px;
+      background-color: var(--navy);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      cursor: pointer;
     }
 
     footer {
@@ -119,17 +194,25 @@
     }
 
     @media (max-width: 768px) {
-      .contact-section {
+      .container {
+        padding: 15px;
+      }
+
+      .section-image {
+        max-width: 70%;
+      }
+
+      .founder-section {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
       }
 
-      .contact-right img {
-        margin: 0 auto;
+      .contact-text {
+        text-align: center;
       }
 
-      .global-text {
-        font-size: 1.3rem;
+      .modal-content {
+        margin-top: 20%;
       }
     }
   </style>
@@ -143,20 +226,17 @@
 
   <div class="container">
 
-    <!-- Contact Section -->
-    <div class="contact-section">
-      <div class="contact-left">
+    <!-- Founder Section -->
+    <div class="founder-section">
+      <div class="contact-text">
         <p><strong>Ruby Coronado</strong><br>
         Founder & Managing Director<br>
         📍 Based in Sioux Falls, South Dakota<br>
-        📞 (605) 610-9512<br>
-        ✉️ rcoronado@enerquo.com<br>
-        📬 5013 S Louise Ave, Unit #7086<br>
-        Sioux Falls, SD 57108</p>
+        📞 +1 (605) 610-9512<br>
+        ✉️ <a href="mailto:rcoronado@enerquo.com">rcoronado@enerquo.com</a><br>
+        📬 5013 S Louise Ave, Unit #7086, Sioux Falls, SD 57108</p>
       </div>
-      <div class="contact-right">
-        <img src="images/founder.jpg" alt="Ruby Coronado">
-      </div>
+      <img src="images/founder.jpg" alt="Ruby Coronado" class="profile">
     </div>
 
     <!-- Introduction -->
@@ -186,20 +266,17 @@
     </ul>
 
     <!-- Global Reach Banner -->
-    <div class="global-banner">
+    <div class="banner">
       <img src="images/globalreach.png" alt="Global Reach">
-      <div class="global-text">🌍 Global Reach</div>
+      <div class="banner-text">
+        <h2>🌍 Global Reach</h2>
+        <p>Enerquo serves clients globally, with a primary focus on emerging energy markets in:<br>
+          Southeast Asia · Sub-Saharan Africa · Latin America · Middle East
+        </p>
+      </div>
     </div>
 
-    <!-- Global Markets -->
-    <ul>
-      <li>Southeast Asia</li>
-      <li>Sub-Saharan Africa</li>
-      <li>Latin America</li>
-      <li>Middle East</li>
-    </ul>
-
-    <!-- 6-Step Process -->
+    <!-- Process -->
     <h2>🔁 Our 6-Step Process</h2>
     <ol>
       <li><strong>Submission of Pre-Qualification Form:</strong> Buyers and sellers complete Enerquo’s pre-qualification form and provide relevant business documentation.</li>
@@ -210,9 +287,37 @@
       <li><strong>Contract Renewal (Optional):</strong> For successful deals, we support term extensions or new contract structuring.</li>
     </ol>
 
-    <p>If you are a qualified buyer or a seller interested in exploring secure, brokered petroleum trade opportunities, please contact me to begin the onboarding process.</p>
+    <!-- Final Image -->
+    <img src="images/rig-workers.jpg" alt="Rig Workers" class="section-image">
 
-    <img src="images/rig-workers2.png" alt="Rig Workers" class="section-image">
+    <!-- Contact CTA -->
+    <button class="cta-button" onclick="document.getElementById('modal').style.display='block'">📩 Contact</button>
+
+    <!-- Modal Form -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+        <h3>Contact Request</h3>
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your Name" required>
+
+          <label for="company">Company Name</label>
+          <input type="text" id="company" placeholder="Company Name">
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(123) 456‑7890">
+
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Topic of Message">
+
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="Your request or message..." required></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
 
   </div>
 
@@ -221,6 +326,16 @@
     © 2025 Enerquo | Independent Oil & Energy Brokerage | US-Based | Sioux Falls, SD<br>
     <small><em>Enerquo is a hybrid-remote business. Address provided is a virtual mailbox for business correspondence only.</em></small>
   </footer>
+
+  <script>
+    // Close modal if clicked outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 
 </body>
 </html>
