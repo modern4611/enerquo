@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Enerquo | Oil & Energy Broker</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
   <style>
     :root {
       --navy: #0a2239;
@@ -47,38 +47,39 @@
       text-align: center;
     }
 
-    .founder-section {
+    .intro-flex {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
-    .contact-text {
-      flex: 1;
-      padding: 20px;
-      min-width: 260px;
-    }
-
-    .contact-text p {
-      text-align: left;
-      white-space: pre-line;
+    .intro-text {
+      flex: 1 1 60%;
+      padding-right: 20px;
     }
 
     .profile {
-      flex: 1;
-      max-width: 200px;
+      flex: 1 1 35%;
+      max-width: 160px;
       border-radius: 8px;
+      display: block;
       margin: 0 auto;
     }
 
+    .contact-info {
+      text-align: left;
+      margin-bottom: 30px;
+      color: var(--light);
+    }
+
     .section-image {
-      max-width: 35%;
+      max-width: 30%;
       display: block;
       margin: 20px auto;
       border-radius: 6px;
-      opacity: 0.7;
+      opacity: 0.6;
     }
 
     ul, ol {
@@ -88,32 +89,6 @@
     a {
       color: var(--accent);
       text-decoration: none;
-    }
-
-    .banner {
-      width: 100%;
-      display: block;
-      margin: 40px 0;
-      position: relative;
-    }
-
-    .banner img {
-      width: 100%;
-      height: auto;
-      max-height: 300px;
-      object-fit: cover;
-    }
-
-    .banner-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: var(--light);
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 20px;
-      border-radius: 10px;
     }
 
     .cta-button {
@@ -133,7 +108,6 @@
       background-color: #2992e6;
     }
 
-    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -193,6 +167,31 @@
       margin-top: 40px;
     }
 
+    .banner {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+      max-height: 250px;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 0 15px;
+    }
+
     @media (max-width: 768px) {
       .container {
         padding: 15px;
@@ -202,13 +201,12 @@
         max-width: 70%;
       }
 
-      .founder-section {
+      .intro-flex {
         flex-direction: column;
-        align-items: center;
       }
 
-      .contact-text {
-        text-align: center;
+      .intro-text {
+        padding-right: 0;
       }
 
       .modal-content {
@@ -226,13 +224,13 @@
 
   <div class="container">
 
-    <!-- Founder Section -->
-    <div class="founder-section">
-      <div class="contact-text">
+    <!-- Contact and Profile -->
+    <div class="intro-flex">
+      <div class="contact-info intro-text">
         <p><strong>Ruby Coronado</strong><br>
         Founder & Managing Director<br>
         📍 Based in Sioux Falls, South Dakota<br>
-        📞 +1 (605) 610-9512<br>
+        📞 (605) 610-9512<br>
         ✉️ <a href="mailto:rcoronado@enerquo.com">rcoronado@enerquo.com</a><br>
         📬 5013 S Louise Ave, Unit #7086, Sioux Falls, SD 57108</p>
       </div>
@@ -241,8 +239,21 @@
 
     <!-- Introduction -->
     <h2>Introduction</h2>
-    <p>I am the Founder and Managing Director of Enerquo, an independent oil and energy brokerage specializing in connecting verified petroleum suppliers with high-demand markets across Asia, Africa, and other emerging regions.</p>
-    <p>At Enerquo, I prioritize transparency, long-term partnerships, and eco-conscious trading practices. I work directly with oil producers, refineries, and energy trading companies to facilitate smooth, secure, and compliant international transactions. My goal is to simplify the sourcing of commodities while protecting all parties through vetted documentation and structured negotiation.</p>
+    <p>
+      As the Founder and Managing Director of Enerquo, I am proud to lead an independent oil and energy brokerage that specializes in facilitating strategic connections between credible petroleum suppliers and high-demand markets across Asia, Africa, Latin America, and other emerging regions.
+    </p>
+    <p>
+      Enerquo was established with a clear mission: to simplify and safeguard international petroleum transactions through trusted partnerships, transparent practices, and meticulous documentation. Our role is not merely that of a broker—we serve as a strategic partner that aligns qualified buyers and sellers, helping them navigate the complexities of global energy trade with confidence and compliance.
+    </p>
+    <p>
+      We work closely with upstream and midstream oil producers, refineries, and energy trading companies to ensure that every transaction is both secure and structured. Our team manages each deal with a high degree of professionalism, placing emphasis on legal protection, contractual integrity, and eco-conscious trading standards.
+    </p>
+    <p>
+      At Enerquo, we believe that long-term success is built on integrity, discretion, and verified processes. That’s why we take a deliberate approach to onboarding, due diligence, and documentation. From initial qualification to final delivery, every step is guided by international trade protocols and industry best practices.
+    </p>
+    <p>
+      Our goal is to bridge the gap between supply and demand in global oil markets—offering clients peace of mind, reduced risk, and opportunities for growth. Whether you're a producer seeking stable, vetted demand, or a buyer looking for reliable supply with transparent terms, Enerquo is here to support your energy procurement objectives with precision and care.
+    </p>
 
     <img src="images/office-team.png" alt="Office Team" class="section-image">
 
@@ -268,13 +279,16 @@
     <!-- Global Reach Banner -->
     <div class="banner">
       <img src="images/globalreach.png" alt="Global Reach">
-      <div class="banner-text">
-        <h2>🌍 Global Reach</h2>
-        <p>Enerquo serves clients globally, with a primary focus on emerging energy markets in:<br>
-          Southeast Asia · Sub-Saharan Africa · Latin America · Middle East
-        </p>
-      </div>
+      <div class="banner-text">🌍 Global Reach</div>
     </div>
+
+    <p>Enerquo serves clients globally, with a primary focus on emerging energy markets in:</p>
+    <ul>
+      <li>Southeast Asia</li>
+      <li>Sub-Saharan Africa</li>
+      <li>Latin America</li>
+      <li>Middle East</li>
+    </ul>
 
     <!-- Process -->
     <h2>🔁 Our 6-Step Process</h2>
@@ -287,7 +301,6 @@
       <li><strong>Contract Renewal (Optional):</strong> For successful deals, we support term extensions or new contract structuring.</li>
     </ol>
 
-    <!-- Final Image -->
     <img src="images/rig-workers.jpg" alt="Rig Workers" class="section-image">
 
     <!-- Contact CTA -->
@@ -323,12 +336,12 @@
 
   <!-- Footer -->
   <footer>
-    © 2025 Enerquo | Independent Oil & Energy Brokerage | US-Based | Sioux Falls, SD<br>
+    © 2025 Enerquo | Independent Oil & Energy Brokerage | US-Based | Sioux Falls, SD
+    <br>
     <small><em>Enerquo is a hybrid-remote business. Address provided is a virtual mailbox for business correspondence only.</em></small>
   </footer>
 
   <script>
-    // Close modal if clicked outside
     window.onclick = function(event) {
       const modal = document.getElementById('modal');
       if (event.target === modal) {
@@ -336,6 +349,5 @@
       }
     }
   </script>
-
 </body>
 </html>
